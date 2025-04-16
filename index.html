@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C Programming Mastery</title>
+    <title>Tech Tool Kits | C Programming </title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Bootstrap CSS -->
@@ -26,15 +29,17 @@
             --warning: #f59e0b;
             --danger: #ef4444;
         }
-html{
-overflow-x:hidden;
-}
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
             background-color: #f1f5f9;
             position: relative;
-            overflow-x:hidden;
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-x: hidden;
         }
 
         .code-font {
@@ -58,7 +63,8 @@ overflow-x:hidden;
             transition: all 0.3s ease;
         }
 
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover,
+        .nav-link.active {
             color: var(--primary);
         }
 
@@ -391,7 +397,8 @@ overflow-x:hidden;
             transition: all 0.3s ease;
         }
 
-        .tutorial-nav-link:hover, .tutorial-nav-link.active {
+        .tutorial-nav-link:hover,
+        .tutorial-nav-link.active {
             background-color: rgba(99, 102, 241, 0.1);
             color: var(--primary);
         }
@@ -403,7 +410,8 @@ overflow-x:hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .tutorial-content h2, .tutorial-content h3 {
+        .tutorial-content h2,
+        .tutorial-content h3 {
             color: var(--primary);
             margin-top: 2rem;
             margin-bottom: 1rem;
@@ -498,27 +506,39 @@ overflow-x:hidden;
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* Typing animation */
         .typing {
-          overflow: hidden;
-          border-right: 3px solid var(--primary);
-          white-space: nowrap;
-          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-          margin: 0 auto;
-          letter-spacing: 0.05em;
+            overflow: hidden;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            margin: 0 auto;
+            letter-spacing: 0.05em;
         }
 
         @keyframes typing {
-          from { width: 0 }
-          to { width: 100% }
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
         }
 
         @keyframes blink-caret {
-          from, to { border-color: transparent }
-          50% { border-color: var(--primary) }
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--primary)
+            }
         }
-        
+
         /* Dark mode toggle */
         .dark-mode-toggle {
             position: fixed;
@@ -538,17 +558,17 @@ overflow-x:hidden;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .dark-mode-toggle:hover {
             transform: scale(1.1);
         }
-        
+
         /* Dark mode styles */
         body.dark-mode {
             background-color: #121212;
             color: #f8f9fa;
         }
-        
+
         body.dark-mode .navbar,
         body.dark-mode .feature-card,
         body.dark-mode .topic-card,
@@ -560,37 +580,39 @@ overflow-x:hidden;
             background-color: #1e1e1e;
             color: #f8f9fa;
         }
-        
+
         body.dark-mode .nav-link,
         body.dark-mode .accordion-button,
         body.dark-mode .tutorial-nav-link {
             color: #f8f9fa;
         }
-        
+
         body.dark-mode .code-output {
             background-color: #2d2d2d;
             color: #f8f9fa;
         }
-        
+
         body.dark-mode .output-text {
             color: #f8f9fa;
         }
-        
+
         body.dark-mode .dark-mode-toggle {
             background: #f8f9fa;
             color: #121212;
         }
-        #btn-learn{
-            color:white;
-            background-color:var(--primary-dark);
+
+        #btn-learn {
+            color: white;
+            background-color: var(--primary-dark);
         }
     </style>
 </head>
+
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-code me-2"></i>C Mastery</a>
+            <a class="navbar-brand" href="#"><i class="fas fa-code me-2"></i>Tech Tool Kits | C Programming </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -609,16 +631,15 @@ overflow-x:hidden;
                         <a class="nav-link" href="#examples">Examples</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link" href="https://phanikumar-kodukulla.vercel.app/"><i class="fas fa-code"></i> Developer Portfolio</a>
-  </li>
+                        <a class="nav-link" href="https://phanikumar-kodukulla.vercel.app/"><i class="fas fa-code"></i>
+                            Developer Portfolio</a>
+                    </li>
                     <li class="nav-item">
-                        <a id = "btn-learn" class="nav-link btn btn-primary text-white ms-lg-3 px-4" href="#tutorials">Start Learning</a>
+                        <a id="btn-learn" class="nav-link btn btn-primary text-white ms-lg-3 px-4"
+                            href="#tutorials">Start Learning</a>
                     </li>
                 </ul>
             </div>
@@ -631,10 +652,12 @@ overflow-x:hidden;
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
                     <h1 class="display-4 typing">Master C Programming</h1>
-                    <p class="lead mb-4">Learn C from scratch with interactive lessons, comprehensive tutorials, and practical examples. Start your programming journey today!</p>
-                    <button class="btn hero-btn" id="getStartedBtn">Get Started <i class="fas fa-arrow-right ms-2"></i></button>
+                    <p class="lead mb-4">Learn C from scratch with interactive lessons, comprehensive tutorials, and
+                        practical examples. Start your programming journey today!</p>
+                    <button class="btn hero-btn" id="getStartedBtn">Get Started <i
+                            class="fas fa-arrow-right ms-2"></i></button>
                 </div>
-               
+
             </div>
         </div>
     </section>
@@ -653,7 +676,8 @@ overflow-x:hidden;
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <h3 class="h5 fw-bold">Structured Learning Path</h3>
-                        <p class="text-muted">Follow a clear, step-by-step curriculum designed for beginners and advanced learners alike.</p>
+                        <p class="text-muted">Follow a clear, step-by-step curriculum designed for beginners and
+                            advanced learners alike.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
@@ -662,7 +686,8 @@ overflow-x:hidden;
                             <i class="fas fa-laptop-code"></i>
                         </div>
                         <h3 class="h5 fw-bold">Interactive Examples</h3>
-                        <p class="text-muted">Learn by doing with interactive code examples and challenges to test your knowledge.</p>
+                        <p class="text-muted">Learn by doing with interactive code examples and challenges to test your
+                            knowledge.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
@@ -671,7 +696,8 @@ overflow-x:hidden;
                             <i class="fas fa-project-diagram"></i>
                         </div>
                         <h3 class="h5 fw-bold">Real-world Projects</h3>
-                        <p class="text-muted">Apply your skills with practical projects that simulate real-world programming scenarios.</p>
+                        <p class="text-muted">Apply your skills with practical projects that simulate real-world
+                            programming scenarios.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
@@ -680,7 +706,8 @@ overflow-x:hidden;
                             <i class="fas fa-users"></i>
                         </div>
                         <h3 class="h5 fw-bold">Community Support</h3>
-                        <p class="text-muted">Join a community of learners and get help whenever you need it from peers and mentors.</p>
+                        <p class="text-muted">Join a community of learners and get help whenever you need it from peers
+                            and mentors.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
@@ -689,7 +716,8 @@ overflow-x:hidden;
                             <i class="fas fa-certificate"></i>
                         </div>
                         <h3 class="h5 fw-bold">Certification</h3>
-                        <p class="text-muted">Earn certificates as you complete modules to showcase your C programming skills.</p>
+                        <p class="text-muted">Earn certificates as you complete modules to showcase your C programming
+                            skills.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
@@ -698,88 +726,95 @@ overflow-x:hidden;
                             <i class="fas fa-sync-alt"></i>
                         </div>
                         <h3 class="h5 fw-bold">Regular Updates</h3>
-                        <p class="text-muted">Stay current with regular updates to course content and best practices in C programming.</p>
+                        <p class="text-muted">Stay current with regular updates to course content and best practices in
+                            C programming.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Topics Section -->
-<section class="py-5 bg-light" id="topics">
-    <div class="container py-5">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="fw-bold">Our Learning Topics</h2>
-            <p class="text-muted">From basic concepts to advanced techniques, we cover it all</p>
+    <!-- Topics Section -->
+    <section class="py-5 bg-light" id="topics">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Our Learning Topics</h2>
+                <p class="text-muted">From basic concepts to advanced techniques, we cover it all</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card topic-card text-center py-4">
+                        <span class="difficulty beginner">Beginner</span>
+                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Introduction to C</h5>
+                            <p class="card-text">Learn the basics of C programming, including syntax, variables, and
+                                data types.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card topic-card text-center py-4">
+                        <span class="difficulty beginner">Beginner</span>
+                        <i class="fas fa-random fa-3x text-primary mb-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Control Flow</h5>
+                            <p class="card-text">Master decision making with if-else statements, loops, and switch
+                                cases.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card topic-card text-center py-4">
+                        <span class="difficulty beginner">Beginner</span>
+                        <i class="fas fa-function fa-3x text-primary mb-3"></i>
+                        <!-- Note: This icon may not exist; consider using fa-cogs -->
+                        <div class="card-body">
+                            <h5 class="card-title">Functions</h5>
+                            <p class="card-text">Understand how to create and use functions to organize your code
+                                efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card topic-card text-center py-4">
+                        <span class="difficulty intermediate">Intermediate</span>
+                        <i class="fas fa-th-list fa-3x text-primary mb-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Arrays & Strings</h5>
+                            <p class="card-text">Work with collections of data and text manipulation in C programming.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card topic-card text-center py-4">
+                        <span class="difficulty intermediate">Intermediate</span>
+                        <i class="fas fa-link fa-3x text-primary mb-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Pointers</h5>
+                            <p class="card-text">Dive into pointers and memory management - a key concept in C
+                                programming.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card topic-card text-center py-4">
+                        <span class="difficulty advanced">Advanced</span>
+                        <i class="fas fa-database fa-3x text-primary mb-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Data Structures</h5>
+                            <p class="card-text">Learn how to implement and use various data structures in C
+                                programming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="basics.html" class="btn btn-primary px-4 py-2">View All Topics</a>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="card topic-card text-center py-4">
-                    <span class="difficulty beginner">Beginner</span>
-                    <i class="fas fa-code fa-3x text-primary mb-3"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Introduction to C</h5>
-                        <p class="card-text">Learn the basics of C programming, including syntax, variables, and data types.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="card topic-card text-center py-4">
-                    <span class="difficulty beginner">Beginner</span>
-                    <i class="fas fa-random fa-3x text-primary mb-3"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Control Flow</h5>
-                        <p class="card-text">Master decision making with if-else statements, loops, and switch cases.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="card topic-card text-center py-4">
-                    <span class="difficulty beginner">Beginner</span>
-                    <i class="fas fa-function fa-3x text-primary mb-3"></i> <!-- Note: This icon may not exist; consider using fa-cogs -->
-                    <div class="card-body">
-                        <h5 class="card-title">Functions</h5>
-                        <p class="card-text">Understand how to create and use functions to organize your code efficiently.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="card topic-card text-center py-4">
-                    <span class="difficulty intermediate">Intermediate</span>
-                    <i class="fas fa-th-list fa-3x text-primary mb-3"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Arrays & Strings</h5>
-                        <p class="card-text">Work with collections of data and text manipulation in C programming.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
-                <div class="card topic-card text-center py-4">
-                    <span class="difficulty intermediate">Intermediate</span>
-                    <i class="fas fa-link fa-3x text-primary mb-3"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Pointers</h5>
-                        <p class="card-text">Dive into pointers and memory management - a key concept in C programming.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
-                <div class="card topic-card text-center py-4">
-                    <span class="difficulty advanced">Advanced</span>
-                    <i class="fas fa-database fa-3x text-primary mb-3"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Data Structures</h5>
-                        <p class="card-text">Learn how to implement and use various data structures in C programming.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4" data-aos="fade-up">
-            <a href="#" class="btn btn-primary px-4 py-2">View All Topics</a>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Code Examples Section -->
     <section class="py-5" id="examples">
@@ -959,41 +994,52 @@ int sum(int a, int b) {
                 <div class="col-lg-9" data-aos="fade-left">
                     <div class="tutorial-content">
                         <h1 id="intro">Introduction to C Programming</h1>
-                        <p>C is a powerful general-purpose programming language that was originally developed by Dennis Ritchie between 1969 and 1973 at Bell Labs. It's one of the most widely used programming languages of all time and has influenced many other popular languages like C++, Java, and JavaScript.</p>
-                        
-                        <p>C is known for its efficiency, flexibility, and control. It's often referred to as a "middle-level" language because it combines elements of high-level languages with the functionality of assembly language.</p>
-                        
+                        <p>C is a powerful general-purpose programming language that was originally developed by Dennis
+                            Ritchie between 1969 and 1973 at Bell Labs. It's one of the most widely used programming
+                            languages of all time and has influenced many other popular languages like C++, Java, and
+                            JavaScript.</p>
+
+                        <p>C is known for its efficiency, flexibility, and control. It's often referred to as a
+                            "middle-level" language because it combines elements of high-level languages with the
+                            functionality of assembly language.</p>
+
                         <h2 id="setup">Setting Up Your Environment</h2>
-                        <p>Before you can start writing C programs, you need to set up a development environment. Here's how you can do it on different operating systems:</p>
-                        
+                        <p>Before you can start writing C programs, you need to set up a development environment. Here's
+                            how you can do it on different operating systems:</p>
+
                         <h3>Windows</h3>
                         <ol>
                             <li>Download a C compiler like MinGW or Microsoft Visual Studio Community.</li>
                             <li>Install the compiler following the installation instructions.</li>
                             <li>Set up environment variables for easy access to the compiler.</li>
-                            <li>(Optional) Install an IDE like Code::Blocks or VS Code for a better development experience.</li>
+                            <li>(Optional) Install an IDE like Code::Blocks or VS Code for a better development
+                                experience.</li>
                         </ol>
-                        
+
                         <h3>macOS</h3>
                         <ol>
-                            <li>Open Terminal and install Xcode Command Line Tools by running: <code>xcode-select --install</code></li>
+                            <li>Open Terminal and install Xcode Command Line Tools by running: <code>xcode-select
+                                    --install</code></li>
                             <li>This will install the GCC compiler which includes support for C programming.</li>
                             <li>(Optional) Install an IDE like VS Code for a better development experience.</li>
                         </ol>
-                        
+
                         <h3>Linux</h3>
                         <ol>
-                            <li>Open Terminal and install GCC by running: <code>sudo apt-get install gcc</code> (for Ubuntu/Debian) or <code>sudo yum install gcc</code> (for Fedora/RHEL).</li>
+                            <li>Open Terminal and install GCC by running: <code>sudo apt-get install gcc</code> (for
+                                Ubuntu/Debian) or <code>sudo yum install gcc</code> (for Fedora/RHEL).</li>
                             <li>(Optional) Install an IDE like VS Code for a better development experience.</li>
                         </ol>
-                        
+
                         <div class="alert alert-info mt-4">
-                            <i class="fas fa-info-circle me-2"></i> For beginners, we recommend using an online compiler like <a href="#" class="alert-link">C Compiler Online</a> if you want to quickly start writing code without setting up a local environment.
+                            <i class="fas fa-info-circle me-2"></i> For beginners, we recommend using an online compiler
+                            like <a href="#" class="alert-link">C Compiler Online</a> if you want to quickly start
+                            writing code without setting up a local environment.
                         </div>
-                        
+
                         <h2 id="first-program">Your First C Program</h2>
                         <p>Now that your environment is set up, let's write your first C program:</p>
-                        
+
                         <div class="code-editor">
                             <div class="code-header">
                                 <div class="code-dots">
@@ -1013,7 +1059,7 @@ int main() {
 }
                             </code></pre>
                         </div>
-                        
+
                         <h3>How to Compile and Run</h3>
                         <ol>
                             <li>Save the code above in a file named <code>hello.c</code></li>
@@ -1027,38 +1073,46 @@ int main() {
                                 </ul>
                             </li>
                         </ol>
-                        
+
                         <p>You should see the output: <code>Hello, C Programming!</code></p>
-                        
+
                         <h2 id="syntax">Basic Syntax</h2>
                         <p>Let's break down the basic syntax elements from our hello world program:</p>
-                        
+
                         <h3>1. Header Files</h3>
-                        <p><code>#include &lt;stdio.h&gt;</code> - This line includes the Standard Input/Output header file which contains functions like <code>printf()</code> for input and output operations.</p>
-                        
+                        <p><code>#include &lt;stdio.h&gt;</code> - This line includes the Standard Input/Output header
+                            file which contains functions like <code>printf()</code> for input and output operations.
+                        </p>
+
                         <h3>2. The main() Function</h3>
-                        <p><code>int main() { ... }</code> - Every C program starts execution from the main function. The <code>int</code> before main indicates that this function returns an integer value.</p>
-                        
+                        <p><code>int main() { ... }</code> - Every C program starts execution from the main function.
+                            The <code>int</code> before main indicates that this function returns an integer value.</p>
+
                         <h3>3. Comments</h3>
-                        <p><code>// This is a comment</code> - Comments are notes in the code that are ignored by the compiler. They help make the code more readable.</p>
-                        
+                        <p><code>// This is a comment</code> - Comments are notes in the code that are ignored by the
+                            compiler. They help make the code more readable.</p>
+
                         <h3>4. Statements and Semicolons</h3>
-                        <p><code>printf("Hello, C Programming!\n");</code> - This statement prints text to the console. Note that each statement ends with a semicolon (;).</p>
-                        
+                        <p><code>printf("Hello, C Programming!\n");</code> - This statement prints text to the console.
+                            Note that each statement ends with a semicolon (;).</p>
+
                         <h3>5. Return Statement</h3>
-                        <p><code>return 0;</code> - This returns a value of 0 to the operating system, indicating that the program executed successfully.</p>
-                        
+                        <p><code>return 0;</code> - This returns a value of 0 to the operating system, indicating that
+                            the program executed successfully.</p>
+
                         <h2 id="variables">Variables & Data Types</h2>
-                        <p>Variables are used to store data in a program. In C, you must declare a variable's type before using it.</p>
-                        
+                        <p>Variables are used to store data in a program. In C, you must declare a variable's type
+                            before using it.</p>
+
                         <h3>Basic Data Types</h3>
                         <ul>
                             <li><code>int</code>: Integer values (e.g., 1, -3, 42)</li>
                             <li><code>float</code>: Single-precision floating-point values (e.g., 3.14, -2.5)</li>
-                            <li><code>double</code>: Double-precision floating-point values (e.g., 3.141592653589793)</li>
+                            <li><code>double</code>: Double-precision floating-point values (e.g., 3.141592653589793)
+                            </li>
                             <li><code>char</code>: Single characters (e.g., 'A', '7', '$')</li>
                         </ul>
-                        
+
                         <h3>Variable Declaration and Initialization</h3>
                         <div class="code-editor">
                             <div class="code-header">
@@ -1097,10 +1151,11 @@ int main() {
 }
                             </code></pre>
                         </div>
-                        
+
                         <h2 id="operators">Operators in C</h2>
-                        <p>Operators are symbols that tell the compiler to perform specific mathematical or logical operations.</p>
-                        
+                        <p>Operators are symbols that tell the compiler to perform specific mathematical or logical
+                            operations.</p>
+
                         <h3>Arithmetic Operators</h3>
                         <ul>
                             <li><code>+</code>: Addition</li>
@@ -1109,7 +1164,7 @@ int main() {
                             <li><code>/</code>: Division</li>
                             <li><code>%</code>: Modulus (remainder after division)</li>
                         </ul>
-                        
+
                         <h3>Example</h3>
                         <div class="code-editor">
                             <div class="code-header">
@@ -1140,10 +1195,11 @@ int main() {
 }
                             </code></pre>
                         </div>
-                        
+
                         <h2 id="next">Next Steps</h2>
-                        <p>Now that you've learned the basics of C programming, you're ready to move on to more advanced topics:</p>
-                        
+                        <p>Now that you've learned the basics of C programming, you're ready to move on to more advanced
+                            topics:</p>
+
                         <ul>
                             <li>Control flow statements (if-else, switch)</li>
                             <li>Loops (for, while, do-while)</li>
@@ -1153,13 +1209,16 @@ int main() {
                             <li>Structures and unions</li>
                             <li>File handling</li>
                         </ul>
-                        
+
                         <div class="alert alert-success mt-4">
-                            <i class="fas fa-check-circle me-2"></i> Congratulations on completing your first C programming tutorial! Continue your learning journey with our next tutorial on Control Flow in C.
+                            <i class="fas fa-check-circle me-2"></i> Congratulations on completing your first C
+                            programming tutorial! Continue your learning journey with our next tutorial on Control Flow
+                            in C.
                         </div>
-                        
+
                         <div class="d-flex justify-content-between mt-5">
-                            <a href="basics.html" class="btn btn-primary">Get started <i class="fas fa-arrow-right ms-2"></i></a>
+                            <a href="basics.html" class="btn btn-primary">Get started <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1247,8 +1306,6 @@ int main() {
         </div>
     </section>
 
-    
-
     <!-- FAQ Section -->
     <section class="py-5" id="faq">
         <div class="container py-5">
@@ -1261,79 +1318,125 @@ int main() {
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
                                     Is C programming difficult to learn?
                                 </button>
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    C has a steeper learning curve compared to some modern languages like Python, but it's definitely learnable with the right resources. Our structured approach makes it accessible for beginners while still covering advanced concepts for experienced programmers. The key is consistent practice and hands-on coding.
+                                    C has a steeper learning curve compared to some modern languages like Python, but
+                                    it's definitely learnable with the right resources. Our structured approach makes it
+                                    accessible for beginners while still covering advanced concepts for experienced
+                                    programmers. The key is consistent practice and hands-on coding.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
                                     Do I need prior programming experience?
                                 </button>
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    No prior programming experience is required! Our C programming course starts from absolute basics and gradually builds up to more complex concepts. However, if you do have experience with other programming languages, you'll likely progress faster through the initial sections.
+                                    No prior programming experience is required! Our C programming course starts from
+                                    absolute basics and gradually builds up to more complex concepts. However, if you do
+                                    have experience with other programming languages, you'll likely progress faster
+                                    through the initial sections.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
                                     Why should I learn C programming in 2025?
                                 </button>
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    C remains incredibly relevant despite being developed in the 1970s. It's widely used in operating systems, embedded systems, game development, and high-performance applications. Learning C gives you a deeper understanding of how computers work at a lower level, making you a better programmer overall. Additionally, many modern languages like C++, Java, and JavaScript have syntax influenced by C.
+                                    C remains incredibly relevant despite being developed in the 1970s. It's widely used
+                                    in operating systems, embedded systems, game development, and high-performance
+                                    applications. Learning C gives you a deeper understanding of how computers work at a
+                                    lower level, making you a better programmer overall. Additionally, many modern
+                                    languages like C++, Java, and JavaScript have syntax influenced by C.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
                                     How long does it take to learn C programming?
                                 </button>
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    The time required varies based on your dedication and prior experience. Beginners can grasp the fundamentals in 2-3 weeks with consistent practice. Achieving proficiency might take 3-6 months of regular coding and completing projects. Our structured curriculum is designed to guide you through this journey efficiently.
+                                    The time required varies based on your dedication and prior experience. Beginners
+                                    can grasp the fundamentals in 2-3 weeks with consistent practice. Achieving
+                                    proficiency might take 3-6 months of regular coding and completing projects. Our
+                                    structured curriculum is designed to guide you through this journey efficiently.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq5">
                                     What can I build with C programming?
                                 </button>
                             </h2>
                             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    With C, you can build a wide range of applications including operating systems, embedded systems, game engines, databases, compilers, desktop applications, and system utilities. Many critical infrastructure software like Linux kernel, Windows components, database engines like MySQL and PostgreSQL, and game engines like Unity (core components) are written in C.
+                                    With C, you can build a wide range of applications including operating systems,
+                                    embedded systems, game engines, databases, compilers, desktop applications, and
+                                    system utilities. Many critical infrastructure software like Linux kernel, Windows
+                                    components, database engines like MySQL and PostgreSQL, and game engines like Unity
+                                    (core components) are written in C.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5" data-aos="fade-up">
-                <p>Still have questions?</p>
-                <a href="#" class="btn btn-outline-primary px-4 py-2">Contact Us</a>
-            </div>
+
         </div>
     </section>
+    <!-- Developers -->
+    <h1 align="center">Developer | Admin</h1>
+    <hr>
+    <div
+        style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 40px; background-color: #f5f5f5;">
+
+        <!-- Left Side: Developer Details -->
+        <div style="flex: 1; text-align: right; padding-right: 20px;">
+            <h2 style="margin: 0; font-size: 24px;">K. Phani Kumar Sharma</h2>
+            <p style="margin: 5px 0;">Developer,Owner</p>
+            <p style="margin: 5px 0;">Tech Tool Kits</p>
+            <p style="margin: 5px 0;">Let's connect together!</p>
+            <p style="margin: 5px 0;"><a href="https://phanikumar-kodukulla.vercel.app/">My Portfolio</a></p>
+        </div>
+
+        <!-- Center Divider -->
+        <div style="font-size: 36px; color: #555; padding: 0 20px;">|</div>
+
+        <!-- Right Side: Image -->
+        <div style="flex: 1; text-align: left; padding-left: 20px;">
+            <img src="my-image.jpg" alt="Phani Kumar Sharma"
+                style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 3px solid black;" />
+        </div>
+    </div>
+    <p style="text-align:center width:100%;text-align:center;">Please inform if any error found.Hope you might enjoy
+        this and keep learning on.</p>
 
     <!-- Call to Action -->
     <section class="py-5 bg-primary text-white">
         <div class="container py-5 text-center" data-aos="fade-up">
             <h2 class="fw-bold mb-4">Ready to Master C Programming?</h2>
-            <p class="lead mb-4">Join thousands of students who have successfully learned C programming with our comprehensive tutorials.</p>
+            <p class="lead mb-4">Join thousands of students who have successfully learned C programming with our
+                comprehensive tutorials.</p>
             <a href="basics.html" class="btn btn-light btn-lg px-5 py-3">Start Learning Now</a>
         </div>
     </section>
@@ -1344,80 +1447,49 @@ int main() {
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="footer-logo">
-                        <i class="fas fa-code me-2"></i>C Mastery
+                        <i class="fas fa-code me-2"></i>Tech Tool Kits | C Programming
                     </div>
-                    <p>Comprehensive C programming tutorials for beginners and experienced developers. Learn at your own pace with interactive lessons and practical examples.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <p>Comprehensive C programming tutorials for beginners and experienced developers. Learn at your own
+                        pace with interactive lessons and practical examples.</p>
+
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <div class="footer-links">
                         <h5>Learn</h5>
                         <ul>
-                            <li><a href="#">Tutorials</a></li>
-                            <li><a href="#">Examples</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Challenges</a></li>
-                            <li><a href="#">Resources</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Support</h5>
-                        <ul>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Community</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Feedback</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Company</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Partners</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 mb-4">
-                    <div class="footer-links">
-                        <h5>Legal</h5>
-                        <ul>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">Security</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 C Mastery. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+                            <li>
+                                <a href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#features">Features</a>
+                            </li>
 
-    <!-- Floating Action Button -->
-    <div class="floating-btn" data-bs-toggle="tooltip" title="Get Help">
-        <i class="fas fa-question"></i>
-    </div>
-    
-    <!-- Dark Mode Toggle -->
-    <div class="dark-mode-toggle" id="darkModeToggle" data-bs-toggle="tooltip" title="Toggle Dark Mode" style = "display:none">
-        <i class="fas fa-moon"></i>
-    </div>
+                            <li>
+                                <a href="#examples">Examples</a>
+                            </li>
+                            <li>
+                                <a href="#testimonials">Testimonials</a>
+                            </li>
+                            <li>
+                                <a href="#faq">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="https://phanikumar-kodukulla.vercel.app/"><i class="fas fa-code"></i> Developer
+                                    Portfolio</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Developed & designed by</h5>
+                    <h6> <a href="https://phanikumar-kodukulla.vercel.app/">K.Phani Kumar Sharma</a></h6>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Tech Tool Kits | C Programming . All rights reserved.</p>
+                </div>
+            </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
@@ -1428,7 +1500,7 @@ int main() {
     <!-- Prism Syntax Highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             // Initialize AOS animations
@@ -1437,11 +1509,10 @@ int main() {
                 easing: 'ease-in-out',
                 once: true
             });
-            
             // Initialize tooltips
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-            
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(
+                tooltipTriggerEl));
             // Smooth scrolling for anchor links
             $('a[href^="#"]').on('click', function(event) {
                 event.preventDefault();
@@ -1449,56 +1520,46 @@ int main() {
                     scrollTop: $($.attr(this, 'href')).offset().top - 80
                 }, 800);
             });
-            
             // Get Started button action
             $('#getStartedBtn').on('click', function() {
                 $('html, body').animate({
                     scrollTop: $('#tutorials').offset().top - 80
                 }, 800);
             });
-            
             // Add active class to nav links based on scroll position
             $(window).on('scroll', function() {
                 let position = $(this).scrollTop();
-                
                 $('section').each(function() {
                     let target = $(this).offset().top - 100;
                     let id = $(this).attr('id');
-                    
                     if (position >= target) {
                         $('.navbar-nav .nav-link').removeClass('active');
                         $('.navbar-nav .nav-link[href="#' + id + '"]').addClass('active');
                     }
                 });
-                
                 // Fade in elements as they come into view
                 $('.fade-in').each(function() {
                     let bottom_of_object = $(this).offset().top + $(this).outerHeight();
                     let bottom_of_window = $(window).scrollTop() + $(window).height();
-                    
                     if (bottom_of_window > bottom_of_object) {
                         $(this).addClass('show');
                     }
                 });
             });
-            
             // Tutorial navigation
             $('.tutorial-nav-link').on('click', function() {
                 $('.tutorial-nav-link').removeClass('active');
                 $(this).addClass('active');
             });
-            
             // Dark mode toggle
             $('#darkModeToggle').on('click', function() {
                 $('body').toggleClass('dark-mode');
-                
                 if ($('body').hasClass('dark-mode')) {
                     $(this).html('<i class="fas fa-sun"></i>');
                 } else {
                     $(this).html('<i class="fas fa-moon"></i>');
                 }
             });
-            
             // Code examples copy functionality
             function addCopyButtons() {
                 // Add copy button to each code block
@@ -1517,30 +1578,26 @@ int main() {
                         copyButton.style.color = 'white';
                         copyButton.style.padding = '5px 10px';
                         copyButton.style.cursor = 'pointer';
-                        
                         copyButton.addEventListener('click', function() {
                             let code = codeBlock.querySelector('code').innerText;
                             navigator.clipboard.writeText(code).then(function() {
                                 copyButton.innerHTML = '<i class="fas fa-check"></i>';
                                 setTimeout(function() {
-                                    copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                                    copyButton.innerHTML =
+                                        '<i class="fas fa-copy"></i>';
                                 }, 2000);
                             });
                         });
-                        
                         // Make the pre relatively positioned if it's not already
                         if (getComputedStyle(codeBlock).position === 'static') {
                             codeBlock.style.position = 'relative';
                         }
-                        
                         codeBlock.appendChild(copyButton);
                     }
                 });
             }
-            
             // Call the function once the page is loaded
             window.addEventListener('load', addCopyButtons);
-            
             // Progress tracking simulation
             function updateProgress() {
                 // This would normally connect to a backend to track real progress
@@ -1552,25 +1609,23 @@ int main() {
                         let increment = Math.random() * 2;
                         let newWidth = Math.min(current + increment, 100);
                         $(this).css('width', newWidth + '%');
-                        
                         // Update icon if completed
                         if (newWidth >= 100) {
-                            $(this).closest('.progress-item').find('.progress-icon').addClass('completed');
-                            $(this).closest('.progress-item').find('.progress-icon i').removeClass('fa-code').addClass('fa-check');
+                            $(this).closest('.progress-item').find('.progress-icon').addClass(
+                                'completed');
+                            $(this).closest('.progress-item').find('.progress-icon i').removeClass(
+                                'fa-code').addClass('fa-check');
                         }
                     }
                 });
             }
-            
             // Simulate progress updates every few minutes (just for demo)
             // In a real app, this would be based on user actions
             setInterval(updateProgress, 300000); // Every 5 minutes
-            
             // Mobile menu collapse on click
-            $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-nav>li>a').on('click', function() {
                 $('.navbar-collapse').collapse('hide');
             });
-            
             // Interactive code examples
             $('.code-example').each(function() {
                 $(this).hover(function() {
@@ -1579,12 +1634,10 @@ int main() {
                     $(this).find('.code-title').css('color', '#fff');
                 });
             });
-            
             // Run code simulation
             $('.run-code-btn').on('click', function() {
                 let outputElement = $(this).parent().next('.code-output').find('.output-text');
                 outputElement.html('Running code...');
-                
                 setTimeout(function() {
                     // Simulate code execution
                     // In a real app, this would send code to a backend for execution
@@ -1592,12 +1645,10 @@ int main() {
                     outputElement.html('Output: ' + output);
                 }, 1000);
             });
-            
             // Search functionality
             $('#searchForm').on('submit', function(e) {
                 e.preventDefault();
                 let searchTerm = $('#searchInput').val().toLowerCase();
-                
                 // Simple search highlighting
                 $('p, h1, h2, h3, h4, h5, h6, li:not(.nav-item)').each(function() {
                     let text = $(this).text().toLowerCase();
@@ -1614,22 +1665,18 @@ int main() {
                     }
                 });
             });
-            
             // Course difficulty filter
             $('.difficulty-filter').on('click', function() {
                 let difficulty = $(this).data('difficulty');
-                
                 if (difficulty === 'all') {
                     $('.topic-card').fadeIn();
                 } else {
                     $('.topic-card').hide();
                     $('.difficulty.' + difficulty).parent().fadeIn();
                 }
-                
                 $('.difficulty-filter').removeClass('active');
                 $(this).addClass('active');
             });
-            
             // Animated typing effect for the hero heading
             function setupTypingAnimation() {
                 let element = document.querySelector('.typing');
@@ -1637,8 +1684,8 @@ int main() {
                     let text = element.textContent;
                     element.textContent = '';
                     element.style.display = 'inline-block';
-                    
                     let i = 0;
+
                     function typeWriter() {
                         if (i < text.length) {
                             element.textContent += text.charAt(i);
@@ -1649,12 +1696,11 @@ int main() {
                     typeWriter();
                 }
             }
-            
             // Call typing animation after a brief delay
             setTimeout(setupTypingAnimation, 500);
-            
             // Add more interactive features as needed
         });
     </script>
 </body>
+
 </html>
