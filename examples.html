@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Prism CSS for syntax highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
     <style>
@@ -24,37 +27,36 @@
             --warning: #f59e0b;
             --danger: #ef4444;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--light);
             color: var(--dark);
             padding-top: 60px;
+            overflow-x: hidden;
         }
-        html{
-overflow-x:hidden;
-}
+
         .navbar {
             background-color: var(--dark);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .navbar-brand {
             font-weight: 700;
             color: var(--primary) !important;
         }
-        
+
         .nav-link {
             color: #fff !important;
             font-weight: 500;
             margin: 0 10px;
             transition: color 0.3s;
         }
-        
+
         .nav-link:hover {
             color: var(--primary) !important;
         }
-        
+
         .hero {
             background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%);
             color: white;
@@ -62,19 +64,19 @@ overflow-x:hidden;
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
+
         .hero h1 {
             font-weight: 700;
             margin-bottom: 20px;
         }
-        
+
         .hero p {
             font-size: 1.1rem;
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .category-pill {
             background-color: var(--primary);
             color: white;
@@ -88,17 +90,17 @@ overflow-x:hidden;
             transition: all 0.3s;
             font-size: 0.9rem;
         }
-        
+
         .category-pill:hover {
             background-color: var(--primary-light);
             transform: translateY(-2px);
         }
-        
+
         .category-pill.active {
             background-color: var(--secondary);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
         .card {
             border-radius: 12px;
             overflow: hidden;
@@ -107,12 +109,12 @@ overflow-x:hidden;
             margin-bottom: 25px;
             border: none;
         }
-        
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .card-header {
             background-color: var(--dark);
             color: white;
@@ -123,57 +125,57 @@ overflow-x:hidden;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .card-header i {
             color: var(--primary);
             margin-right: 10px;
         }
-        
+
         .card-body {
             padding: 20px;
         }
-        
+
         .difficulty {
             font-size: 0.8rem;
             padding: 4px 10px;
             border-radius: 12px;
             font-weight: 500;
         }
-        
+
         .difficulty.easy {
             background-color: var(--success);
             color: white;
         }
-        
+
         .difficulty.medium {
             background-color: var(--warning);
             color: white;
         }
-        
+
         .difficulty.hard {
             background-color: var(--danger);
             color: white;
         }
-        
+
         .program-description {
             color: var(--dark);
             margin-bottom: 15px;
         }
-        
+
         .code-container {
             background-color: var(--code-bg);
             border-radius: 8px;
             position: relative;
             margin: 15px 0;
         }
-        
+
         .code-control {
             position: absolute;
             top: 10px;
             right: 10px;
             z-index: 10;
         }
-        
+
         .code-control button {
             background: rgba(255, 255, 255, 0.2);
             border: none;
@@ -185,11 +187,11 @@ overflow-x:hidden;
             cursor: pointer;
             transition: background 0.3s;
         }
-        
+
         .code-control button:hover {
             background: rgba(255, 255, 255, 0.3);
         }
-        
+
         pre {
             margin: 0;
             padding: 15px;
@@ -197,19 +199,19 @@ overflow-x:hidden;
             max-height: 350px;
             overflow-y: auto;
         }
-        
+
         code {
             font-family: 'Fira Code', monospace;
             font-size: 0.9rem;
             line-height: 1.5;
         }
-        
+
         .card-footer {
             background-color: #f8f9fa;
             border-top: 1px solid #eee;
             padding: 12px 20px;
         }
-        
+
         .tags span {
             background-color: #e9ecef;
             color: var(--dark);
@@ -219,90 +221,97 @@ overflow-x:hidden;
             margin-right: 5px;
             display: inline-block;
         }
-        
+
         .search-container {
             position: relative;
             margin-bottom: 25px;
         }
-        
+
         .search-container .search-icon {
             position: absolute;
             left: 15px;
             top: 12px;
             color: #aaa;
         }
-        
+
         .search-container input {
             padding-left: 40px;
             border-radius: 25px;
             border: 1px solid #ddd;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
-        
+
         .btn-primary {
             background-color: var(--primary);
             border-color: var(--primary);
         }
-        
+
         .btn-primary:hover {
             background-color: var(--primary-dark);
             border-color: var(--primary-dark);
         }
-        
+
         .btn-outline-primary {
             color: var(--primary);
             border-color: var(--primary);
         }
-        
+
         .btn-outline-primary:hover {
             background-color: var(--primary);
             border-color: var(--primary);
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero {
                 padding: 40px 0;
             }
-            
+
             .card-header {
                 padding: 12px 15px;
             }
-            
+
             .category-pills-container {
                 overflow-x: auto;
                 white-space: nowrap;
                 padding-bottom: 10px;
             }
         }
-        
+
         /* Animation for cards */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .program-card {
             animation: fadeIn 0.5s ease forwards;
         }
-        
+
         footer {
             background-color: var(--dark);
             color: white;
             padding: 30px 0;
             margin-top: 40px;
         }
-        
+
         footer a {
             color: var(--primary);
             text-decoration: none;
         }
-        
+
         footer a:hover {
             color: var(--primary-light);
             text-decoration: underline;
         }
-        
+
         .output-container {
             background-color: #f8f9fa;
             border: 1px solid #eee;
@@ -310,7 +319,7 @@ overflow-x:hidden;
             padding: 15px;
             margin-top: 15px;
         }
-        
+
         .output-header {
             font-weight: 600;
             color: var(--dark);
@@ -318,12 +327,12 @@ overflow-x:hidden;
             display: flex;
             align-items: center;
         }
-        
+
         .output-header i {
             color: var(--primary);
             margin-right: 8px;
         }
-        
+
         .output-content {
             font-family: 'Fira Code', monospace;
             white-space: pre-wrap;
@@ -334,12 +343,13 @@ overflow-x:hidden;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-code"></i> C-MasterClass
+                <i class="fas fa-code"></i> Tech Tool Kits | C Programming Examples
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -347,17 +357,18 @@ overflow-x:hidden;
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-    <a class="nav-link" href=".hero"><i class="fas fa-arrow-up"></i> Back to top</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="https://phanikumar-kodukulla.vercel.app/"><i class="fas fa-code"></i> Developer Portfolio</a>
-  </li>
+                        <a class="nav-link" href=".hero"><i class="fas fa-arrow-up"></i> Back to top</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://phanikumar-kodukulla.vercel.app/"><i class="fas fa-code"></i>
+                            Developer Portfolio</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -367,8 +378,8 @@ overflow-x:hidden;
     <section class="hero">
         <div class="container text-center">
             <h1><i class="fas fa-code"></i> C Programming Examples</h1>
-            <p>Explore classic programming examples in C - from basic to advanced. 
-               Each example comes with explanation, code and output to help you master C programming.</p>
+            <p>Explore classic programming examples in C - from basic to advanced.
+                Each example comes with explanation, code and output to help you master C programming.</p>
         </div>
     </section>
 
@@ -404,34 +415,35 @@ overflow-x:hidden;
             <div class="row">
                 <div class="col-md-6">
                     <h4><i class="fas fa-code"></i> C-MasterClass</h4>
-                    <p>Your comprehensive resource for learning C programming with practical examples and clear explanations.</p>
+                    <p>Your comprehensive resource for learning C programming with practical examples and clear
+                        explanations.</p>
                 </div>
                 <div class="col-md-3">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                       <li class="nav-item">
-    <a class="nav-link" href="#introduction"><i class="fas fa-arrow-up"></i> Back to top</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="https://phanikumar-kodukulla.vercel.app/"><i class="fas fa-code"></i> Developer Portfolio</a>
-  </li></ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#introduction"><i class="fas fa-arrow-up"></i> Back to top</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://phanikumar-kodukulla.vercel.app/"><i
+                                    class="fas fa-code"></i> Developer Portfolio</a>
+                        </li>
+                    </ul>
                 </div>
+
                 <div class="col-md-3">
-                    <h5>Connect With Us</h5>
-                    <div class="d-flex gap-3 mb-3">
-                        <a href="#"><i class="fab fa-github fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-discord fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
-                    </div>
-                    <p class="small">© 2025 C-MasterClass. All rights reserved.</p>
+                    <h5>Developed & designed by</h5>
+                    <h6> <a href="https://phanikumar-kodukulla.vercel.app/">K.Phani Kumar Sharma</a></h6>
                 </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Tech Tool Kits | C Programming . All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -442,13 +454,13 @@ overflow-x:hidden;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- Prism JS for syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js">
+    </script>
 
     <script>
         $(document).ready(function() {
             // Program data
-            const programs = [
-                {
+            const programs = [{
                     id: 1,
                     title: "Palindrome Number Check",
                     category: "basic",
@@ -1109,13 +1121,11 @@ Reversed Number = 54321`,
                     tags: ["reverse", "numbers", "loops"]
                 }
             ];
-
             // Function to generate program cards
             function generateProgramCards(programsArray) {
                 let html = '';
                 programsArray.forEach(program => {
                     let difficultyClass = '';
-                    
                     if (program.difficulty === 'easy') {
                         difficultyClass = 'easy';
                     } else if (program.difficulty === 'medium') {
@@ -1123,7 +1133,6 @@ Reversed Number = 54321`,
                     } else {
                         difficultyClass = 'hard';
                     }
-                    
                     let categoryIcon = '';
                     if (program.category === 'basic') {
                         categoryIcon = 'fa-code';
@@ -1132,7 +1141,6 @@ Reversed Number = 54321`,
                     } else {
                         categoryIcon = 'fa-font';
                     }
-                    
                     html += `
                     <div class="col-lg-6 program-card" data-category="${program.category}">
                         <div class="card">
@@ -1166,20 +1174,15 @@ Reversed Number = 54321`,
                         </div>
                     </div>`;
                 });
-                
                 return html;
             }
-            
             // Populate programs
             $('#programsContainer').html(generateProgramCards(programs));
-            
             // Filter by category
             $('.category-pill').click(function() {
                 $('.category-pill').removeClass('active');
                 $(this).addClass('active');
-                
                 const category = $(this).data('category');
-                
                 if (category === 'all') {
                     $('.program-card').show();
                 } else {
@@ -1187,20 +1190,18 @@ Reversed Number = 54321`,
                     $(`.program-card[data-category="${category}"]`).show();
                 }
             });
-            
             // Search functionality
             $('#programSearch').on('input', function() {
                 const searchTerm = $(this).val().toLowerCase();
-                
                 $('.program-card').each(function() {
                     const cardId = $(this).index();
                     const program = programs[cardId];
-                    
                     if (program) {
                         const titleMatch = program.title.toLowerCase().includes(searchTerm);
-                        const descMatch = program.description.toLowerCase().includes(searchTerm);
-                        const tagsMatch = program.tags.some(tag => tag.toLowerCase().includes(searchTerm));
-                        
+                        const descMatch = program.description.toLowerCase().includes(
+                        searchTerm);
+                        const tagsMatch = program.tags.some(tag => tag.toLowerCase().includes(
+                            searchTerm));
                         if (titleMatch || descMatch || tagsMatch) {
                             $(this).show();
                         } else {
@@ -1209,12 +1210,10 @@ Reversed Number = 54321`,
                     }
                 });
             });
-            
             // Copy to clipboard functionality
             $('.copy-btn').click(function() {
                 const programId = $(this).data('id');
                 const program = programs.find(p => p.id === programId);
-                
                 if (program) {
                     navigator.clipboard.writeText(program.code).then(() => {
                         // Visual feedback
@@ -1225,12 +1224,10 @@ Reversed Number = 54321`,
                     });
                 }
             });
-            
             // Run code simulation
             $('.run-btn').click(function() {
                 const programId = $(this).data('id');
                 const outputElement = $(`#output-${programId}`);
-                
                 // Add animation
                 outputElement.css('opacity', '0.5');
                 setTimeout(() => {
@@ -1240,4 +1237,5 @@ Reversed Number = 54321`,
         });
     </script>
 </body>
+
 </html>
