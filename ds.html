@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Through C</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --code-bg: #1e1e3f;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--primary);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: var(--light) !important;
+        }
+
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 0;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: var(--light);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+
+        .complexity-table {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .complexity-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .best-case {
+            color: var(--success);
+        }
+
+        .average-case {
+            color: var(--warning);
+        }
+
+        .worst-case {
+            color: var(--danger);
+        }
+
+        .sidebar {
+            background-color: var(--dark);
+            color: var(--light);
+            height: 100%;
+            position: fixed;
+            padding: 2rem 1rem;
+        }
+
+        .sidebar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav .nav-link:hover,
+        .sidebar-nav .nav-link.active {
+            background-color: var(--primary);
+            color: white !important;
+        }
+
+        .sidebar-nav .nav-link i {
+            margin-right: 0.5rem;
+        }
+
+        .algorithm-section {
+            padding: 4rem 0;
+        }
+
+        .algorithm-card {
+            border-top: 4px solid var(--primary);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 2rem 0;
+        }
+
+        .social-icons a {
+            color: var(--light);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary);
+        }
+
+        /* Tabs */
+        .nav-tabs .nav-link {
+            color: var(--dark);
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        /* Code Animation */
+        .highlight {
+            background-color: rgba(99, 102, 241, 0.2);
+            animation: highlight 1.5s ease;
+        }
+
+        @keyframes highlight {
+            0% {
+                background-color: rgba(99, 102, 241, 0.5);
+            }
+
+            100% {
+                background-color: rgba(99, 102, 241, 0.2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-project-diagram me-2"></i>
+                DSA with C
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#basics">C Basics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#data-structures">Data Structures</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#algorithms">Algorithms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">Data Structures Through C</h1>
+            <p class="lead mb-5">Master algorithms and data structures with comprehensive tutorials, examples, and
+                complexity analysis</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#algorithms" class="btn btn-light btn-lg">
+                    <i class="fas fa-code me-2"></i>Start Learning
+                </a>
+                <a href="#data-structures" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-project-diagram me-2"></i>Explore Data Structures
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-xl-2 d-none d-lg-block p-0">
+                <div class="sidebar">
+                    <h5 class="mb-3">Navigation</h5>
+                    <ul class="sidebar-nav nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#basics">
+                                <i class="fas fa-code"></i> C Basics
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#data-structures">
+                                <i class="fas fa-project-diagram"></i> Data Structures
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sorting">
+                                <i class="fas fa-sort"></i> Sorting Algorithms
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#searching">
+                                <i class="fas fa-search"></i> Searching Algorithms
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h5 class="mb-3 mt-4">Popular Data Structures</h5>
+                    <ul class="sidebar-nav nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#arrays">
+                                <i class="fas fa-table"></i> Arrays
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#linked-lists">
+                                <i class="fas fa-link"></i> Linked Lists
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#stacks">
+                                <i class="fas fa-layer-group"></i> Stacks
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#queues">
+                                <i class="fas fa-stream"></i> Queues
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#trees">
+                                <i class="fas fa-tree"></i> Trees
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#graphs">
+                                <i class="fas fa-project-diagram"></i> Graphs
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-lg-9 col-xl-10 ms-auto">
+                <div class="container py-5">
+                    <!-- Algorithms Section -->
+                    <section id="algorithms" class="mb-5">
+                        <h2 class="border-bottom pb-2 mb-4">Algorithm Analysis</h2>
+                        <p class="lead">In this section, we'll explore sorting and searching algorithms with their
+                            implementations in C, along with time and space complexity analysis.</p>
+
+                        <!-- Sorting Algorithms -->
+                        <div id="sorting" class="algorithm-section">
+                            <h3 class="mb-4">Sorting Algorithms</h3>
+                            <div class="row">
+                                <!-- Bubble Sort -->
+                                <div class="col-md-6">
+                                    <div class="card algorithm-card shadow-sm h-100">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Bubble Sort</h5>
+                                            <span class="badge bg-light text-dark">Basic</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Bubble sort is a simple sorting algorithm that repeatedly steps through
+                                                the list, compares adjacent elements, and swaps them if they are in the
+                                                wrong order.</p>
+
+                                            <ul class="nav nav-tabs mb-3" id="bubbleSortTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="bubble-code-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#bubble-code" type="button"
+                                                        role="tab">C Code</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="bubble-complexity-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#bubble-complexity"
+                                                        type="button" role="tab">Complexity</button>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content" id="bubbleSortTabContent">
+                                                <div class="tab-pane fade show active" id="bubble-code" role="tabpanel">
+                                                    <pre><code>void bubbleSort(int arr[], int n) {
+    int i, j, temp;
+    for (i = 0; i < n-1; i++) {
+        // Last i elements are already in place
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // Swap arr[j] and arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}</code></pre>
+                                                </div>
+                                                <div class="tab-pane fade" id="bubble-complexity" role="tabpanel">
+                                                    <h6>Time Complexity:</h6>
+                                                    <ul>
+                                                        <li><strong class="best-case">Best Case:</strong> O(n) - when
+                                                            the array is already sorted</li>
+                                                        <li><strong class="average-case">Average Case:</strong> O(n²)
+                                                        </li>
+                                                        <li><strong class="worst-case">Worst Case:</strong> O(n²) - when
+                                                            the array is sorted in reverse order</li>
+                                                    </ul>
+                                                    <h6>Space Complexity:</h6>
+                                                    <p>O(1) - Bubble sort is an in-place algorithm</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Sort -->
+                                <div class="col-md-6">
+                                    <div class="card algorithm-card shadow-sm h-100">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Quick Sort</h5>
+                                            <span class="badge bg-secondary">Advanced</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Quick sort is a divide-and-conquer algorithm that selects a 'pivot'
+                                                element and partitions the array around the pivot.</p>
+
+                                            <ul class="nav nav-tabs mb-3" id="quickSortTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="quick-code-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#quick-code" type="button"
+                                                        role="tab">C Code</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="quick-complexity-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#quick-complexity"
+                                                        type="button" role="tab">Complexity</button>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content" id="quickSortTabContent">
+                                                <div class="tab-pane fade show active" id="quick-code" role="tabpanel">
+                                                    <pre><code>// Function to swap two elements
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+// Partition function
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+    
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+
+// QuickSort function
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}</code></pre>
+                                                </div>
+                                                <div class="tab-pane fade" id="quick-complexity" role="tabpanel">
+                                                    <h6>Time Complexity:</h6>
+                                                    <ul>
+                                                        <li><strong class="best-case">Best Case:</strong> O(n log n)
+                                                        </li>
+                                                        <li><strong class="average-case">Average Case:</strong> O(n log
+                                                            n)</li>
+                                                        <li><strong class="worst-case">Worst Case:</strong> O(n²) - when
+                                                            the pivot is always the smallest or largest element</li>
+                                                    </ul>
+                                                    <h6>Space Complexity:</h6>
+                                                    <p>O(log n) - due to the recursive call stack</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <!-- Merge Sort -->
+                                <div class="col-md-6">
+                                    <div class="card algorithm-card shadow-sm h-100">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Merge Sort</h5>
+                                            <span class="badge bg-secondary">Advanced</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Merge sort is a divide-and-conquer algorithm that divides the input array
+                                                into two halves, recursively sorts them, and then merges the sorted
+                                                halves.</p>
+
+                                            <ul class="nav nav-tabs mb-3" id="mergeSortTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="merge-code-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#merge-code" type="button"
+                                                        role="tab">C Code</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="merge-complexity-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#merge-complexity"
+                                                        type="button" role="tab">Complexity</button>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content" id="mergeSortTabContent">
+                                                <div class="tab-pane fade show active" id="merge-code" role="tabpanel">
+                                                    <pre><code>// Merge two subarrays
+void merge(int arr[], int l, int m, int r) {
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
+    
+    // Create temp arrays
+    int L[n1], R[n2];
+    
+    // Copy data to temp arrays
+    for (i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+        
+    // Merge the temp arrays back
+    i = 0;
+    j = 0;
+    k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+    
+    // Copy remaining elements
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+// MergeSort function
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int m = l + (r - l) / 2;
+        
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        
+        merge(arr, l, m, r);
+    }
+}</code></pre>
+                                                </div>
+                                                <div class="tab-pane fade" id="merge-complexity" role="tabpanel">
+                                                    <h6>Time Complexity:</h6>
+                                                    <ul>
+                                                        <li><strong class="best-case">Best Case:</strong> O(n log n)
+                                                        </li>
+                                                        <li><strong class="average-case">Average Case:</strong> O(n log
+                                                            n)</li>
+                                                        <li><strong class="worst-case">Worst Case:</strong> O(n log n)
+                                                        </li>
+                                                    </ul>
+                                                    <h6>Space Complexity:</h6>
+                                                    <p>O(n) - requires additional space for merging</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Insertion Sort -->
+                                <div class="col-md-6">
+                                    <div class="card algorithm-card shadow-sm h-100">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Insertion Sort</h5>
+                                            <span class="badge bg-light text-dark">Basic</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Insertion sort builds the final sorted array one item at a time, taking
+                                                each element and inserting it into its correct position.</p>
+
+                                            <ul class="nav nav-tabs mb-3" id="insertionSortTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="insertion-code-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#insertion-code"
+                                                        type="button" role="tab">C Code</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="insertion-complexity-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#insertion-complexity"
+                                                        type="button" role="tab">Complexity</button>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content" id="insertionSortTabContent">
+                                                <div class="tab-pane fade show active" id="insertion-code"
+                                                    role="tabpanel">
+                                                    <pre><code>void insertionSort(int arr[], int n) {
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
+        
+        /* Move elements of arr[0..i-1], that are
+           greater than key, to one position ahead
+           of their current position */
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}</code></pre>
+                                                </div>
+                                                <div class="tab-pane fade" id="insertion-complexity" role="tabpanel">
+                                                    <h6>Time Complexity:</h6>
+                                                    <ul>
+                                                        <li><strong class="best-case">Best Case:</strong> O(n) - when
+                                                            the array is already sorted</li>
+                                                        <li><strong class="average-case">Average Case:</strong> O(n²)
+                                                        </li>
+                                                        <li><strong class="worst-case">Worst Case:</strong> O(n²) - when
+                                                            the array is sorted in reverse order</li>
+                                                    </ul>
+                                                    <h6>Space Complexity:</h6>
+                                                    <p>O(1) - Insertion sort is an in-place algorithm</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Searching Algorithms -->
+                        <div id="searching" class="algorithm-section">
+                            <h3 class="mb-4">Searching Algorithms</h3>
+                            <div class="row">
+                                <!-- Linear Search -->
+                                <div class="col-md-6">
+                                    <div class="card algorithm-card shadow-sm h-100">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Linear Search</h5>
+                                            <span class="badge bg-light text-dark">Basic</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Linear search is a simple search algorithm that checks each element of
+                                                the list until the desired element is found or the list ends.</p>
+
+                                            <ul class="nav nav-tabs mb-3" id="linearSearchTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="linear-code-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#linear-code" type="button"
+                                                        role="tab">C Code</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="linear-complexity-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#linear-complexity"
+                                                        type="button" role="tab">Complexity</button>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content" id="linearSearchTabContent">
+                                                <div class="tab-pane fade show active" id="linear-code" role="tabpanel">
+                                                    <pre><code>int linearSearch(int arr[], int n, int x) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == x)
+            return i;
+    }
+    return -1;
+}</code></pre>
+                                                </div>
+                                                <div class="tab-pane fade" id="linear-complexity" role="tabpanel">
+                                                    <h6>Time Complexity:</h6>
+                                                    <ul>
+                                                        <li><strong class="best-case">Best Case:</strong> O(1) - when
+                                                            the element is found at the first position</li>
+                                                        <li><strong class="average-case">Average Case:</strong> O(n/2) =
+                                                            O(n)</li>
+                                                        <li><strong class="worst-case">Worst Case:</strong> O(n) - when
+                                                            the element is at the end or not present</li>
+                                                    </ul>
+                                                    <h6>Space Complexity:</h6>
+                                                    <p>O(1) - no extra space needed</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Binary Search -->
+                                <div class="col-md-6">
+                                    <div class="card algorithm-card shadow-sm h-100">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-0">Binary Search</h5>
+                                            <span class="badge bg-secondary">Intermediate</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Binary search is a divide-and-conquer search algorithm that requires a
+                                                sorted array. It repeatedly divides the search range in half.</p>
+
+                                            <ul class="nav nav-tabs mb-3" id="binarySearchTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="binary-code-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#binary-code" type="button"
+                                                        role="tab">C Code</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="binary-complexity-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#binary-complexity"
+                                                        type="button" role="tab">Complexity</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="binary-recursive-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#binary-recursive"
+                                                        type="button" role="tab">Recursive</button>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content" id="binarySearchTabContent">
+                                                <div class="tab-pane fade show active" id="binary-code" role="tabpanel">
+                                                    <pre><code>int binarySearch(int arr[], int l, int r, int x) {
+    while (l <= r) {
+        int mid = l + (r - l) / 2;
+        
+        // Check if x is present at mid
+        if (arr[mid] == x)
+            return mid;
+            
+        // If x greater, ignore left half
+        if (arr[mid] < x)
+            l = mid + 1;
+            
+        // If x is smaller, ignore right half
+        else
+            r = mid - 1;
+    }
+    
+    // Element not present
+    return -1;
+}</code></pre>
+                                                </div>
+                                                <div class="tab-pane fade" id="binary-complexity" role="tabpanel">
+                                                    <h6>Time Complexity:</h6>
+                                                    <ul>
+                                                        <li><strong class="best-case">Best Case:</strong> O(1) - when
+                                                            the element is found at the middle position</li>
+                                                        <li><strong class="average-case">Average Case:</strong> O(log n)
+                                                        </li>
+                                                        <li><strong class="worst-case">Worst Case:</strong> O(log n) -
+                                                            when the element is not present</li>
+                                                    </ul>
+                                                    <h6>Space Complexity:</h6>
+                                                    <p>O(1) - iterative implementation uses constant space</p>
+                                                </div>
+                                                <div class="tab-pane fade" id="binary-recursive" role="tabpanel">
+                                                    <pre><code>int binarySearchRecursive(int arr[], int l, int r, int x) {
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+        
+        // If the element is present at the middle
+        if (arr[mid] == x)
+            return mid;
+            
+        // If element is smaller than mid, search in left subarray
+        if (arr[mid] > x)
+            return binarySearchRecursive(arr, l, mid - 1, x);
+            
+        // Else search in right subarray
+        return binarySearchRecursive(arr, mid + 1, r, x);
+    }
+    
+    // Element not present
+    return -1;
+}</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Data Structures Section -->
+                    <section id="data-structures" class="mb-5">
+                        <h2 class="border-bottom pb-2 mb-4">Data Structures</h2>
+                        <p class="lead">Learn about fundamental data structures in C programming with implementations
+                            and operations.</p>
+
+                        <div class="row">
+                            <!-- Arrays -->
+                            <div class="col-md-6" id="arrays">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Arrays</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Arrays are a collection of elements of the same type stored in contiguous
+                                            memory locations.</p>
+
+                                        <h5>Implementation in C:</h5>
+                                        <pre><code>// Declaring an array
+int arr[10];  // Array of 10 integers
+
+// Initializing an array
+int numbers[5] = {1, 2, 3, 4, 5};
+
+// Accessing elements
+int third = numbers[2];  // Access 3rd element (index 2)
+
+// Updating elements
+numbers[1] = 10;  // Change 2nd element to 10</code></pre>
+
+                                        <h5>Time Complexity:</h5>
+                                        <ul>
+                                            <li>Access: O(1)</li>
+                                            <li>Search: O(n)</li>
+                                            <li>Insertion at end: O(1)</li>
+                                            <li>Insertion at middle: O(n)</li>
+                                            <li>Deletion: O(n)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Linked Lists -->
+                            <div class="col-md-6" id="linked-lists">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Linked Lists</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Linked lists consist of nodes where each node contains data and a reference
+                                            to the next node.</p>
+
+                                        <h5>Implementation in C:</h5>
+                                        <pre><code>// Node structure
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Create a new node
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Insert at beginning
+struct Node* insertAtBeginning(struct Node* head, int data) {
+    struct Node* newNode = createNode(data);
+    newNode->next = head;
+    return newNode;
+}
+
+// Print linked list
+void printList(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}</code></pre>
+
+                                        <h5>Time Complexity:</h5>
+                                        <ul>
+                                            <li>Access: O(n)</li>
+                                            <li>Search: O(n)</li>
+                                            <li>Insertion at beginning: O(1)</li>
+                                            <li>Insertion at end: O(n)</li>
+                                            <li>Deletion: O(n)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stacks -->
+                            <div class="col-md-6" id="stacks">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Stacks</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Stacks are a collection of elements following the Last In First Out (LIFO)
+                                            principle.</p>
+
+                                        <h5>Implementation using Arrays:</h5>
+                                        <pre><code>// Stack structure
+struct Stack {
+    int top;
+    unsigned capacity;
+    int* array;
+};
+
+// Create a stack
+struct Stack* createStack(unsigned capacity) {
+    struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
+    stack->capacity = capacity;
+    stack->top = -1;
+    stack->array = (int*)malloc(stack->capacity * sizeof(int));
+    return stack;
+}
+
+// Check if stack is full
+int isFull(struct Stack* stack) {
+    return stack->top == stack->capacity - 1;
+}
+
+// Check if stack is empty
+int isEmpty(struct Stack* stack) {
+    return stack->top == -1;
+}
+
+// Push an element
+void push(struct Stack* stack, int item) {
+    if (isFull(stack))
+        return;
+    stack->array[++stack->top] = item;
+}
+
+// Pop an element
+int pop(struct Stack* stack) {
+    if (isEmpty(stack))
+        return -1;
+    return stack->array[stack->top--];
+}
+
+// Get top element
+int peek(struct Stack* stack) {
+    if (isEmpty(stack))
+        return -1;
+    return stack->array[stack->top];
+}</code></pre>
+
+                                        <h5>Time Complexity:</h5>
+                                        <ul>
+                                            <li>Push: O(1)</li>
+                                            <li>Pop: O(1)</li>
+                                            <li>Peek: O(1)</li>
+                                            <li>Search: O(n)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Queues -->
+                            <div class="col-md-6" id="queues">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Queues</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Queues are a collection of elements following the First In First Out (FIFO)
+                                            principle.</p>
+
+                                        <h5>Implementation using Arrays:</h5>
+                                        <pre><code>// Queue structure
+struct Queue {
+    int front, rear, size;
+    unsigned capacity;
+    int* array;
+};
+
+// Create a queue
+struct Queue* createQueue(unsigned capacity) {
+    struct Queue* queue = (struct Queue*)malloc(sizeof(struct Queue));
+    queue->capacity = capacity;
+    queue->front = queue->size = 0;
+    queue->rear = capacity - 1;
+    queue->array = (int*)malloc(queue->capacity * sizeof(int));
+    return queue;
+}
+
+// Check if queue is full
+int isFull(struct Queue* queue) {
+    return (queue->size == queue->capacity);
+}
+
+// Check if queue is empty
+int isEmpty(struct Queue* queue) {
+    return (queue->size == 0);
+}
+
+// Add an element (enqueue)
+void enqueue(struct Queue* queue, int item) {
+    if (isFull(queue))
+        return;
+    queue->rear = (queue->rear + 1) % queue->capacity;
+    queue->array[queue->rear] = item;
+    queue->size = queue->size + 1;
+}
+
+// Remove an element (dequeue)
+int dequeue(struct Queue* queue) {
+    if (isEmpty(queue))
+        return -1;
+    int item = queue->array[queue->front];
+    queue->front = (queue->front + 1) % queue->capacity;
+    queue->size = queue->size - 1;
+    return item;
+}
+
+// Get front element
+int front(struct Queue* queue) {
+    if (isEmpty(queue))
+        return -1;
+    return queue->array[queue->front];
+}
+
+// Get rear element
+int rear(struct Queue* queue) {
+    if (isEmpty(queue))
+        return -1;
+    return queue->array[queue->rear];
+}</code></pre>
+
+                                        <h5>Time Complexity:</h5>
+                                        <ul>
+                                            <li>Enqueue: O(1)</li>
+                                            <li>Dequeue: O(1)</li>
+                                            <li>Front/Rear: O(1)</li>
+                                            <li>Search: O(n)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trees -->
+                            <div class="col-md-6" id="trees">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Trees</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Trees are hierarchical data structures with a root node and child nodes
+                                            connected by edges.</p>
+
+                                        <h5>Binary Tree Implementation:</h5>
+                                        <pre><code>// Node structure
+struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+
+// Create a new node
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+// Inorder traversal
+void inorder(struct Node* root) {
+    if (root != NULL) {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
+
+// Preorder traversal
+void preorder(struct Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+// Postorder traversal
+void postorder(struct Node* root) {
+    if (root != NULL) {
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ", root->data);
+    }
+}</code></pre>
+
+                                        <h5>Time Complexity (Binary Search Tree):</h5>
+                                        <ul>
+                                            <li>Search: O(log n) average, O(n) worst</li>
+                                            <li>Insert: O(log n) average, O(n) worst</li>
+                                            <li>Delete: O(log n) average, O(n) worst</li>
+                                            <li>Traversal: O(n)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Graphs -->
+                            <div class="col-md-6" id="graphs">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h4 class="mb-0">Graphs</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Graphs consist of vertices (nodes) connected by edges, representing
+                                            relationships between objects.</p>
+
+                                        <h5>Adjacency Matrix Implementation:</h5>
+                                        <pre><code>// Graph structure
+struct Graph {
+    int V;  // Number of vertices
+    int** adjMatrix;
+};
+
+// Create a graph
+struct Graph* createGraph(int V) {
+    struct Graph* graph = (struct Graph*)malloc(sizeof(struct Graph));
+    graph->V = V;
+    
+    // Create adjacency matrix
+    graph->adjMatrix = (int**)malloc(V * sizeof(int*));
+    for (int i = 0; i < V; i++) {
+        graph->adjMatrix[i] = (int*)malloc(V * sizeof(int));
+        for (int j = 0; j < V; j++)
+            graph->adjMatrix[i][j] = 0;
+    }
+    
+    return graph;
+}
+
+// Add edge
+void addEdge(struct Graph* graph, int src, int dest) {
+    // Add edge from src to dest
+    graph->adjMatrix[src][dest] = 1;
+    
+    // Add edge from dest to src for undirected graph
+    graph->adjMatrix[dest][src] = 1;
+}
+
+// Print graph
+void printGraph(struct Graph* graph) {
+    for (int i = 0; i < graph->V; i++) {
+        for (int j = 0; j < graph->V; j++)
+            printf("%d ", graph->adjMatrix[i][j]);
+        printf("\n");
+    }
+}</code></pre>
+
+                                        <h5>Time Complexity (Adjacency Matrix):</h5>
+                                        <ul>
+                                            <li>Add Vertex: O(V²)</li>
+                                            <li>Add Edge: O(1)</li>
+                                            <li>Remove Vertex: O(V²)</li>
+                                            <li>Remove Edge: O(1)</li>
+                                            <li>Check if edge exists: O(1)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- C Basics Section -->
+                    <section id="basics" class="mb-5">
+                        <h2 class="border-bottom pb-2 mb-4">C Programming Basics</h2>
+                        <p class="lead">A quick refresher on C programming fundamentals before diving into data
+                            structures.</p>
+
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h4>Structure of a C Program</h4>
+                                <pre><code>#include <stdio.h>
+#include <stdlib.h>
+
+// Function declaration
+void greet();
+
+int main() {
+    // This is the main function
+    printf("Hello, World!\n");
+    
+    // Function call
+    greet();
+    
+    return 0;
+}
+
+// Function definition
+void greet() {
+    printf("Welcome to Data Structures with C!\n");
+}</code></pre>
+
+                                <h4 class="mt-4">Memory Management</h4>
+                                <pre><code>// Dynamic memory allocation
+int* arr = (int*)malloc(10 * sizeof(int));
+
+// Check if memory allocation was successful
+if (arr == NULL) {
+    printf("Memory allocation failed\n");
+    return 1;
+}
+
+// Use the allocated memory
+for (int i = 0; i < 10; i++) {
+    arr[i] = i * 2;
+}
+
+// Free the allocated memory
+free(arr);</code></pre>
+
+                                <h4 class="mt-4">Structures</h4>
+                                <pre><code>// Define a structure
+struct Student {
+    char name[50];
+    int rollNumber;
+    float percentage;
+};
+
+// Create a structure variable
+struct Student student1;
+
+// Access and modify structure members
+strcpy(student1.name, "John Doe");
+student1.rollNumber = 101;
+student1.percentage = 85.5;
+
+// Create a structure pointer
+struct Student* ptr = &student1;
+
+// Access structure members using pointer
+printf("Name: %s\n", ptr->name);
+printf("Roll Number: %d\n", ptr->rollNumber);
+printf("Percentage: %.2f%%\n", ptr->percentage);</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-code me-2">Tech Tool Kits | C Programming</h5>
+                    <p>Master algorithms, data structures, and C programming concepts with our comprehensive tutorials.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light">Home</a></li>
+                        <li><a href="#data-structures" class="text-light">Data Structures</a></li>
+                        <li><a href="#algorithms" class="text-light">Algorithms</a></li>
+                        <li><a href="#resources" class="text-light">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Developed by</h5>
+                    <h6> <a href="https://phanikumar-kodukulla.vercel.app/">K.Phani Kumar Sharma</a></h6>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p>&copy; 2025 Tech Tool Kits | C Programming | Data Structures Through C. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scrolling
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+            // Highlight active nav item
+            $(window).on('scroll', function() {
+                var scrollPosition = $(window).scrollTop();
+                $('section').each(function() {
+                    var topOffset = $(this).offset().top - 100;
+                    var bottomOffset = topOffset + $(this).outerHeight();
+                    if (scrollPosition >= topOffset && scrollPosition <= bottomOffset) {
+                        var id = $(this).attr('id');
+                        $('.nav-link').removeClass('active');
+                        $('.nav-link[href="#' + id + '"]').addClass('active');
+                        // Also highlight sidebar link
+                        $('.sidebar-nav .nav-link').removeClass('active');
+                        $('.sidebar-nav .nav-link[href="#' + id + '"]').addClass('active');
+                    }
+                });
+            });
+            // Code animation
+            $('.nav-tabs button').on('click', function() {
+                setTimeout(function() {
+                    $('.tab-pane.active pre code').addClass('highlight');
+                    setTimeout(function() {
+                        $('.tab-pane.active pre code').removeClass('highlight');
+                    }, 1000);
+                }, 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
